@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+.form {
+  display: flex;
+  border: 2px solid red;
+  margin: auto;
+}
+label {
+  display: block;
+}
