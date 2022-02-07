@@ -18,13 +18,14 @@ const initForm = (form) => {
     console.log("submit", event);
 
     // get values in number form for loan, rate, and length
-    const P = parseFloat(document.getElementById("loan").value);
-    const ra = parseFloat(document.getElementById("rate").value);
+    const p = parseFloat(document.getElementById("loan").value);
+    const m = parseFloat(document.getElementById("rate").value) / 12 / 100;
     const n = document.getElementById("length").value * 12;
 
-    //equation to get monthyl mortgage
-    const mortgage = P * ((ra * (1 + ra)) ^ (n / ((1 + ra) ^ n) - 1));
-    console.log(P, ra, n);
+    //equation to get monthly mortgage
+    const mortgage = p * ((m * Math.pow(1 + m, n)) / (Math.pow(1 + m, n) - 1));
+    console.log(p, m, n);
+    console.log(Math.pow(1 + m, n));
     console.log(mortgage);
 
     //add in monthly mortgage as a new element

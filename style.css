@@ -3,9 +3,16 @@
 }
 .form {
   display: flex;
-  border: 2px solid red;
-  margin: auto;
+
+  margin: 20px 20px;
 }
 label {
   display: block;
+}
+#mortgage-form {
+  margin: auto;
+}
+
+#mortgage-form > div {
+  padding: 10px;
 }
