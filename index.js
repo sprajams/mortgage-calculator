@@ -15,7 +15,7 @@
 const initForm = (form) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("submit", event);
+    // console.log("submit", event);
 
     // get values in number form for loan, rate, and length
     const p = parseFloat(document.getElementById("loan").value);
@@ -27,14 +27,16 @@ const initForm = (form) => {
     console.log(p, m, n);
     console.log(Math.pow(1 + m, n));
     console.log(mortgage);
+    const roundMortgage = Math.round(mortgage * 100) / 100;
 
     //add in monthly mortgage as a new element
     const newDiv = document.createElement("div");
     const node = document.createTextNode(
-      "Your monthly mortgage will be $" + mortgage
+      "Your monthly mortgage will be $" + roundMortgage
     );
     newDiv.appendChild(node);
     document.getElementById("mortgage-form").appendChild(newDiv);
+    document.getElementById("button").disabled = "true";
   };
   form.addEventListener("submit", handleSubmit);
 };

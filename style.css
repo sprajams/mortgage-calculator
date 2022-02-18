@@ -1,18 +1,25 @@
 * {
   box-sizing: border-box;
 }
-.form {
-  display: flex;
-
-  margin: 20px 20px;
-}
 label {
   display: block;
 }
 #mortgage-form {
   margin: auto;
+  border: 1px solid rgb(68, 5, 96);
+  background-color: rgb(153, 117, 169);
+  border-radius: 10%;
+  padding: 110px 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #mortgage-form > div {
   padding: 10px;
+}
+.title {
+  font-size: 2em;
+  text-align: center;
 }
