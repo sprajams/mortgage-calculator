@@ -24,19 +24,19 @@ const initForm = (form) => {
 
     //equation to get monthly mortgage
     const mortgage = p * ((m * Math.pow(1 + m, n)) / (Math.pow(1 + m, n) - 1));
-    console.log(p, m, n);
-    console.log(Math.pow(1 + m, n));
-    console.log(mortgage);
+    // console.log(p, m, n);
+    // console.log(Math.pow(1 + m, n));
+    // console.log(mortgage);
     const roundMortgage = Math.round(mortgage * 100) / 100;
 
     //add in monthly mortgage as a new element
-    const newDiv = document.createElement("div");
-    const node = document.createTextNode(
-      "Your monthly mortgage will be $" + roundMortgage
-    );
-    newDiv.appendChild(node);
-    document.getElementById("mortgage-form").appendChild(newDiv);
-    document.getElementById("button").disabled = "true";
+    // const newDiv = document.createElement("div");
+    const node = document.createTextNode(roundMortgage);
+    console.log(node);
+    // newDiv.appendChild(node);
+    // document.getElementById("mortgage-form").appendChild(newDiv);
+    document.querySelector(".result").style.visibility = "visible";
+    document.querySelector(".result").appendChild(node);
   };
   form.addEventListener("submit", handleSubmit);
 };
