@@ -4,37 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="index.js" async></script>
     <title>Mortgage Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Slackey&display=swap"
+      rel="stylesheet"
+    />
+    <script src="index.js" async></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div class="title">Mortgage Calculator</div>
-    <div class="container">
-      <section class="form">
-        <form id="mortgage-form">
+    <div class="content">
+      <div class="title">Mortgage Calculator</div>
+      <div class="container">
+        <form id="mortgageForm" class="mortgageForm">
           <div>
-            <label for="loan">Principal loan amount</label>
-            <input type="number" id="loan" name="loan" required />
-            <span>$ USD</span>
+            <label for="loan" class="mortgageForm__label"
+              >Principal loan amount:</label
+            >
+            <div>
+              <input
+                type="number"
+                id="loan"
+                step="0.01"
+                name="loan"
+                min="0"
+                required
+              />
+              <span>$ USD</span>
+            </div>
           </div>
           <div>
-            <label for="rate"> Interest rate </label>
-            <input type="number" id="rate" name="rate" step="any" required />
-            <span>%</span>
+            <label for="rate" class="mortgageForm__label">
+              Interest rate:
+            </label>
+            <div>
+              <input
+                type="number"
+                id="rate"
+                name="rate"
+                step="any"
+                min="0"
+                required
+              />
+              <span>%</span>
+            </div>
           </div>
           <div>
-            <label for="length">Length of loan</label>
-            <input type="number" id="length" name="length" required />
-            <span>Years</span>
-            <button type="submit" id="button">Calculate</button>
+            <label for="length" class="mortgageForm__label"
+              >Length of loan:</label
+            >
+            <div>
+              <input type="number" id="length" name="length" min="0" required />
+              <span>Years</span>
+            </div>
           </div>
+          <button type="submit" id="button" class="mortgageForm__button">
+            Calculate
+          </button>
         </form>
-      </section>
-      <section class="result">
-        <div class="result__text">Your monthly mortgage will be $</div>
-      </section>
+
+        <section class="resultOuter">
+          <div class="resultInner">
+            <p class="resultInner__text">
+              Your monthly mortgage will be
+              <span class="resultInner__text--bold"></span>
+            </p>
+          </div>
+          <div class="result__img">
+            <img src="house.png" alt="house icon" />
+          </div>
+        </section>
+      </div>
     </div>
   </body>
 </html>
