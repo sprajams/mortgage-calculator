@@ -17,14 +17,14 @@
 
   <body>
     <div class="content">
-      <div class="title">Mortgage Calculator</div>
       <div class="container">
         <form id="mortgageForm" class="mortgageForm">
+          <h1 class="title">Mortgage Calculator</h1>
           <div>
             <label for="loan" class="mortgageForm__label"
               >Principal loan amount:</label
             >
-            <div>
+            <div class="mortgageForm__input">
               <input
                 type="number"
                 id="loan"
@@ -40,7 +40,7 @@
             <label for="rate" class="mortgageForm__label">
               Interest rate:
             </label>
-            <div>
+            <div class="mortgageForm__input">
               <input
                 type="number"
                 id="rate"
@@ -56,7 +56,7 @@
             <label for="length" class="mortgageForm__label"
               >Length of loan:</label
             >
-            <div>
+            <div class="mortgageForm__input">
               <input type="number" id="length" name="length" min="0" required />
               <span>Years</span>
             </div>
